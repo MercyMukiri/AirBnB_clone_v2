@@ -14,7 +14,7 @@ from shlex import split
 
 
 class HBNBCommand(cmd.Cmd):
-    """this class is entry point of the command interpreter
+    """This class is the entry point for the command interpreter
     """
     prompt = "(hbnb) "
     all_classes = {"BaseModel", "User", "State", "City",
@@ -36,7 +36,7 @@ class HBNBCommand(cmd.Cmd):
         """Creates a new instance of BaseModel, saves it
         Exceptions:
             SyntaxError: when there is no args given
-            NameError: when there is no object taht has the name
+            NameError: when there is no object that has the name
         """
         try:
             if not line:
@@ -65,7 +65,7 @@ class HBNBCommand(cmd.Cmd):
         """Prints the string representation of an instance
         Exceptions:
             SyntaxError: when there is no args given
-            NameError: when there is no object taht has the name
+            NameError: when there is no object that has the name
             IndexError: when there is no id given
             KeyError: when there is no valid id given
         """
@@ -96,7 +96,7 @@ class HBNBCommand(cmd.Cmd):
         """Deletes an instance based on the class name and id
         Exceptions:
             SyntaxError: when there is no args given
-            NameError: when there is no object taht has the name
+            NameError: when there is no object that has the name
             IndexError: when there is no id given
             KeyError: when there is no valid id given
         """
@@ -127,7 +127,7 @@ class HBNBCommand(cmd.Cmd):
     def do_all(self, line):
         """Prints all string representation of all instances
         Exceptions:
-            NameError: when there is no object taht has the name
+            NameError: when there is no object that has the name
         """
         objects = storage.all()
         my_list = []
@@ -149,10 +149,10 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
     def do_update(self, line):
-        """Updates an instanceby adding or updating attribute
+        """Updates an instance by adding or updating the attribute
         Exceptions:
             SyntaxError: when there is no args given
-            NameError: when there is no object taht has the name
+            NameError: when there is no object that has the name
             IndexError: when there is no id given
             KeyError: when there is no valid id given
             AttributeError: when there is no attribute given
@@ -194,7 +194,7 @@ class HBNBCommand(cmd.Cmd):
             print("** value missing **")
 
     def count(self, line):
-        """count the number of instances of a class
+        """Counts the number of instances of a class
         """
         counter = 0
         try:
@@ -211,7 +211,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
     def strip_clean(self, args):
-        """strips the argument and return a string of command
+        """Strips the argument and returns a string of command
         Args:
             args: input list of args
         Return:
@@ -234,8 +234,8 @@ class HBNBCommand(cmd.Cmd):
         return " ".join(i for i in new_list)
 
     def default(self, line):
-        """retrieve all instances of a class and
-        retrieve the number of instances
+        """Retrieves all instances of a class and
+        retrieves the number of instances
         """
         my_list = line.split('.')
         if len(my_list) >= 2:
