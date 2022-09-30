@@ -6,6 +6,9 @@ import os
 
 
 def do_pack():
+    """
+    Generates an archive for the wweb_static folder
+    """
     try:
         if not os.path.exists("versions"):
             local('mkdir versions')
